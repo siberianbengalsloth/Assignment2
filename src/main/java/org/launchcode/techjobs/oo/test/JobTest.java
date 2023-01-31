@@ -22,7 +22,7 @@ public class JobTest {
         job1 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         job3 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
-        job4 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
+        job4 = new Job("Ice Cream Tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting Ability"));
     }
 
 
@@ -64,23 +64,36 @@ public class JobTest {
     }
 
 
-//@Test
-//    public void testToStringContainsCorrectLabelsAndData() {
-//this will encompass other tests
-//}
-//
-//
-//@Test
-//    public void testToStringHandlesEmptyField() {
-//// what if one of the fields is empty?
-//    Job testJob = new Job("", "LaunchCode", "Location", "Snej", "webnxk", "wneind");
-//    // ID: testJob.getId();
-//    // Name:
-//    // Epoyer: Launchcode
-//    ... etc etc
-//            Because the Name field is empty, it should return "Data not available" in that missing field
-//
-//    }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        String expectedOutput = "ID: " + job1.getId() + '\n' +
+                "Name: Product Tester" + '\n' +
+                "Employer: ACME" + '\n' +
+                "Location: Desert" + '\n' +
+                "Position Type: Quality Control" + '\n' +
+                "Core Competency: Persistence";
+
+        String actualOutput = job1.toString();
+
+        assertEquals(expectedOutput, actualOutput);
+
+    }
+
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        String expectedOutput = "ID: " + job4.getId() + '\n' +
+                "Name: Ice Cream Tester" + '\n' +
+                "Employer: Data not available" + '\n' +
+                "Location: Home" + '\n' +
+                "Position Type: UX" + '\n' +
+                "Core Competency: Tasting Ability";
+
+        String actualOutput = job4.toString();
+
+        assertEquals(expectedOutput, actualOutput);
+
+    }
 
 
 }
