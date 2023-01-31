@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class JobTest {
 
-    Job job1, job2, job3, job4;
+    Job job1, job2, job3, job4, job5;
 
     @Before
     public void createJobObjects() {
@@ -23,6 +23,7 @@ public class JobTest {
         job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         job3 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         job4 = new Job("Ice Cream Tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting Ability"));
+        job5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     }
 
 
@@ -71,7 +72,7 @@ public class JobTest {
                 "Employer: ACME" + '\n' +
                 "Location: Desert" + '\n' +
                 "Position Type: Quality Control" + '\n' +
-                "Core Competency: Persistence";
+                "Core Competency: Persistence" + '\n';
 
         String actualOutput = job1.toString();
 
@@ -87,13 +88,12 @@ public class JobTest {
                 "Employer: Data not available" + '\n' +
                 "Location: Home" + '\n' +
                 "Position Type: UX" + '\n' +
-                "Core Competency: Tasting Ability";
+                "Core Competency: Tasting Ability" + '\n';
 
         String actualOutput = job4.toString();
 
         assertEquals(expectedOutput, actualOutput);
 
     }
-
 
 }
