@@ -3,8 +3,8 @@ package org.launchcode.techjobs.oo;
 import java.util.Objects;
 
 
-public class JobField {
-    private int id;
+public abstract class JobField {
+    private final int id;
     private static int nextId = 1;
     private String value;
 
@@ -28,12 +28,12 @@ public class JobField {
         if (this == o) return true;
         if (!(o instanceof JobField)) return false;
         JobField jobField = (JobField) o;
-        return getId() == jobField.getId();
+        return id == jobField.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(id);
     }
 
     public int getId() {

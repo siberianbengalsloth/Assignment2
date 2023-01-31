@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
+    private final int id;
     private static int nextId = 1;
 
     private String name;
@@ -32,8 +32,7 @@ public class Job {
     }
 
 
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
+    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields match.
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

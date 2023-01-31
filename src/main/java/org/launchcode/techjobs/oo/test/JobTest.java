@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class JobTest {
 
-    Job job1, job2, job3, job4, job5;
+    Job job1, job2, job3, job4, job5, job6;
 
     @Before
     public void createJobObjects() {
@@ -24,6 +24,7 @@ public class JobTest {
         job3 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         job4 = new Job("Ice Cream Tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting Ability"));
         job5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        job6 = new Job();
     }
 
 
@@ -52,11 +53,6 @@ public class JobTest {
         assertEquals("Quality Control", job1.getPositionType().getValue());
         assertEquals("Persistence", job1.getCoreCompetency().getValue());
 
-        assertTrue("Product Tester".equals(job1.getName()));
-        assertTrue("ACME".equals(job1.getEmployer().getValue()));
-        assertTrue("Desert".equals(job1.getLocation().getValue()));
-        assertTrue("Quality Control".equals(job1.getPositionType().getValue()));
-        assertTrue("Persistence".equals(job1.getCoreCompetency().getValue()));
     }
 
     @Test
